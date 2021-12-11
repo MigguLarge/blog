@@ -248,6 +248,10 @@ class PostMain extends HTMLElement {
                 .post-main {
                     width: calc(100% - 5vw);
                 }
+
+                .post-content {
+                    padding: .5em;
+                }
             }
 
             @media screen and (max-width: 576px) {
@@ -257,7 +261,7 @@ class PostMain extends HTMLElement {
                 }
 
                 .post-content {
-                    font-size: 1em;
+                    padding: .5em;
                 }
             }
         `;
