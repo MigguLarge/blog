@@ -253,6 +253,7 @@ class PostMain extends HTMLElement {
             @media screen and (max-width: 576px) {
                 .post-main {
                     width: 100%;
+                    margin-top: 0;
                 }
 
                 .post-content {
