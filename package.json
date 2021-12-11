@@ -1,0 +1,16 @@
+{
+  "name": "nodejs_blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Krishna",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^8.3.0",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^12.2.0"
+  }
+}

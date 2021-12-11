@@ -1,0 +1,74 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Home | JUN</title>
+            <script src="./components.js" defer></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+            <script>hljs.highlightAll();</script>
+            <style>
+                :root {
+                    --black: #232323;
+                    --white: #fff;
+                    --gray: hsl(0 0% 50%);
+                }
+
+                body,html {
+                    color: var(--black);
+                    margin: 0;
+                    padding: 0;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                }
+
+                a {
+                    color: var(--black);
+                    text-decoration: none;
+                }
+            </style>
+        </head>
+        <body>
+            <custom-header></custom-header>
+            
+            <style>
+                .main {
+                    margin: 0 20vw;
+                }
+
+                .post-list {
+                    width: 100%;
+                    padding: 0;
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: .5em;
+                }
+
+                @media screen and (max-width: 864px) {
+                    .post-list {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+
+                    .main {
+                        margin: 0 10vw;
+                    }
+                }
+
+                @media screen and (max-width: 576px) {
+                    .post-list {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    
+                    .main {
+                        margin: 0 1em;
+                    }
+                }
+            </style>
+            <div class="main">
+                <ul class="post-list">
+                    <post-list-item post-href="./posts/sorting-algorithms-copy.html" post-thumbnail="./img/clock(gruv).jpg" post-title="정렬 알고리즘" post-date="2021-12-02T03:13:27.552Z" post-author="Krishna"></post-list-item><post-list-item post-href="./posts/sorting-algorithms.html" post-thumbnail="./img/helena-yankovska-unsplash.jpg" post-title="정렬 알고리즘" post-date="2021-12-02T03:13:27.552Z" post-author="Krishna"></post-list-item>
+                </ul>
+            </div>
+        
+        </body>
+        </html>
+    
