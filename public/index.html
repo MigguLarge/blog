@@ -67,7 +67,14 @@
             </style>
             <div class="main">
                 <ul class="post-list">
-                    <post-list-item post-href="./posts/sorting-algorithms-copy.html" post-thumbnail="./img/clock(gruv).jpg" post-title="정렬 알고리즘" post-date="2021-12-02T03:13:27.552Z" post-author="Krishna"></post-list-item><post-list-item post-href="./posts/sorting-algorithms.html" post-thumbnail="./img/helena-yankovska-unsplash.jpg" post-title="정렬 알고리즘" post-date="2021-12-02T03:13:27.552Z" post-author="Krishna"></post-list-item>
+                    <post-list-item post-href="./posts/sorting-algorithms.html" () => {
+                                    if (post.thumbnail !== '') {
+                                        return `post-thumbnail="./img/${post.thumbnail}`;
+                                    } else {
+                                        return '';
+                                    }
+                                }}
+                                post-title="정렬 알고리즘" post-date="2021-12-02T03:13:27.552Z" post-author="Krishna"></post-list-item>
                 </ul>
             </div>
         

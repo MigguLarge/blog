@@ -5,8 +5,6 @@ date: '2021-12-02T03:13:27.552Z'
 thumbnail: 'helena-yankovska-unsplash.jpg'
 ---
 
-test
-
 1. 버블 정렬 (Bubble Sort)
 
     Array의 Element들을 하나씩 대조하면서 정렬하는 알고리즘.  
