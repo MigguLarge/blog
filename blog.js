@@ -58,6 +58,7 @@ function layout(title, inner, componentsRoute) {
         <html>
         <head>
             <meta charset="UTF-8">
+            <meta content="width=device-width, initial-scale=1" name="viewport" />
             <title>${title}</title>
             <script src="${componentsRoute}" defer></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
