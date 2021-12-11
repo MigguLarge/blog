@@ -246,13 +246,13 @@ class PostMain extends HTMLElement {
 
             @media screen and (min-width: 577px) and (max-width: 864px) {
                 .post-main {
-                    width: calc(100% - 10vw);
+                    width: calc(100% - 5vw);
                 }
             }
 
-            @media screen ad (max-width: 576px) {
+            @media screen and (max-width: 576px) {
                 .post-main {
-                    width: calc(100% - 2em);
+                    width: 100%;
                 }
 
                 .post-content {
