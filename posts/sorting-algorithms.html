@@ -1,0 +1,163 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>정렬 알고리즘 | Krishna</title>
+            <script src="../components.js" defer></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+            <script>hljs.highlightAll();</script>
+            <style>
+                :root {
+                    --black: #232323;
+                    --white: #fff;
+                    --gray: hsl(0 0% 50%);
+                }
+
+                body,html {
+                    color: var(--black);
+                    margin: 0;
+                    padding: 0;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                }
+
+                a {
+                    color: var(--black);
+                    text-decoration: none;
+                }
+            </style>
+        </head>
+        <body>
+            <custom-header></custom-header>
+            
+                <post-main post-title="정렬 알고리즘" post-author="Krishna" post-date="2021-12-02T03:13:27.552Z" post-thumbnail="../img/helena-yankovska-unsplash.jpg"><ol>
+<li>
+<p>버블 정렬 (Bubble Sort)</p>
+<p>Array의 Element들을 하나씩 대조하면서 정렬하는 알고리즘.</p>
+<p>Best: n, Average: n^2, Worst: n^2</p>
+<pre><code class="language-go">func BubbleSort(list []int) {
+    length := len(list)
+    for i := 0; i &lt; length; i++ {
+        j := i
+
+        for j &gt; 0 {
+            if list[j-1] &gt; list[j] {
+                Swap(list, j-1, j)
+            }
+        j--
+        }
+    }
+}
+</code></pre>
+</li>
+<li>
+<p>선택 정력 (Selection Sort)</p>
+<p>Array중 값이 가장 작은 Element를 Array의 첫번째, 두번째, 세번째, ... 순으로 옮긴다.<br>
+<br>
+Best: n^2, Average: n^2, Worst: n^2</p>
+<pre><code class="language-go">func SelectionSort(list []int) {
+    length := len(list)
+        for i := 0; i &lt; length-1; i++ {
+            // Finding minimum element of list
+            indexMin := i
+            for j := i + 1; j &lt; length; j++ {
+                if list[j] &lt; list[indexMin] {
+                    indexMin = j
+                }
+            }
+
+            // Swaping minimum element of list with first element
+            if indexMin != i {
+                Swap(list, i, indexMin)
+            }
+        }
+}
+</code></pre>
+</li>
+<li>
+<p>삽입 정렬 (Insertion Sort)</p>
+<p>Array의 Element를 순서데로 (1번+2번, 2번+3번, 4번+5번...) 비교하고 작은걸 앞으로? 보낸다.<br>
+<br>
+Best: n, Average: n^2, Worst: n^2</p>
+<pre><code class="language-go">func InsertionSort(list []int) {
+    length := len(list)
+
+    for i:= 0; i &lt; length-1; i++ {
+        j := i
+
+        for j &gt; 0 &amp;&amp; list[j-1] &gt; list[j] {
+            Swap(list, j-1, j)
+            j--
+        }
+    }
+}
+</code></pre>
+</li>
+<li>
+<p>합병 정렬 (Merge Sort)</p>
+<p>제귀함수로 Array를 계속 반으로 나누어 반으로 나눈것들을 따로 정렬하고, 합치면서 다시 정렬하는 정렬 방식.<br>
+<br>
+Best: n log n, Average: n log n, Worst: n log n</p>
+<pre><code class="language-go">func MergeSort(list []int) []int {
+    length := len(list)
+    middle := length / 2
+    if length &lt;= 1 {
+        return list
+    }
+
+    // Split list to left, right list
+    var (
+        left  = make([]int, middle)
+        right = make([]int, length-middle)
+    )
+
+    for i := 0; i &lt; length; i++ {
+        if i &lt; middle {
+            left[i] = list[i]
+        } else {
+            right[i-middle] = list[i]
+        }
+    }
+
+    left = MergeSort(left)
+    right = MergeSort(right)
+
+    return Merge(left, right)
+}
+
+// Merges list of int while sorting them
+func Merge(left, right []int) (result []int) {
+result = make([]int, len(left)+len(right))
+
+i := 0
+for len(left) &gt; 0 &amp;&amp; len(right) &gt; 0 {
+    if left[0] &lt;= right[0] {
+        result[i] = left[0]
+        left = left[1:]
+    } else {
+        result[i] = right[0]
+        right = right[1:]
+    }
+    i++
+}
+
+// If there is remaining
+for j := 0; j &lt; len(left); j++ {
+    result[i] = left[j]
+    i++
+}
+for j := 0; j &lt; len(right); j++ {
+    result[i] = right[j]
+    i++
+}
+
+return result
+}
+</code></pre>
+</li>
+</ol>
+</post-main>
+            
+        </body>
+        </html>
+    
