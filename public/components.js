@@ -158,9 +158,9 @@ class PostMain extends HTMLElement {
         const postHeader = document.createElement('div');
         postHeader.setAttribute('class', 'post-header');
 
-        const postThumbnail = document.createElement('img');
-        postThumbnail.src = this.getAttribute('post-thumbnail');
-        postThumbnail.setAttribute('class', 'post-thumbnail');
+        const postBanner = document.createElement('img');
+        postBanner.src = this.getAttribute('post-banner');
+        postBanner.setAttribute('class', 'post-banner');
 
         const postInfo = document.createElement('div');
         postInfo.setAttribute('class', 'post-info');
@@ -225,7 +225,7 @@ class PostMain extends HTMLElement {
                 background-color: var(--white);
             }
 
-            .post-thumbnail {
+            .post-banner {
                 width: 100%;
                 aspect-ratio: 2 / 1;
                 object-fit: cover;
@@ -302,7 +302,7 @@ class PostMain extends HTMLElement {
         this.appendChild(linkElem);
         this.appendChild(wrapper);
         wrapper.appendChild(postHeader);
-        postHeader.appendChild(postThumbnail);
+        postHeader.appendChild(postBanner);
         postHeader.appendChild(postInfo);
         postInfo.appendChild(postTitle);
         postInfo.appendChild(postAuthor);

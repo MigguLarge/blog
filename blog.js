@@ -99,6 +99,7 @@ const postList = getAllPost([
     'slug',
     'thumbnail',
     'content',
+    'banner',
 ]);
 
 fs.writeFileSync(
@@ -178,8 +179,8 @@ postList.map((post) =>
             `
                 <post-main post-title="${post.title}" post-author="${
                 post.author
-            }" post-date="${post.date}" post-thumbnail="../img/${
-                post.thumbnail
+            }" post-date="${post.date}" post-banner="../img/${
+                post.banner
             }">${markdownToHtml(post.content)}</post-main>
             `,
             `../components.js`,

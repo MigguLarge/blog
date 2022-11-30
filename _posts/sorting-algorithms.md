@@ -3,11 +3,12 @@ title: '정렬 알고리즘'
 author: 'Krishna'
 date: '2021-12-02T03:13:27.552Z'
 thumbnail: 'helena-yankovska-unsplash.jpg'
+banner: 'helena-yankovska-unsplash.jpg'
 ---
 
 1. 버블 정렬 (Bubble Sort)
 
-    Array의 Element들을 하나씩 대조하면서 정렬하는 알고리즘.  
+    Array의 Element들을 하나씩 대조하면서 정렬하는 알고리즘.
 
     Best: n, Average: n^2, Worst: n^2
 
