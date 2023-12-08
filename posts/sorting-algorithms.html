@@ -37,6 +37,8 @@
 <p>버블 정렬 (Bubble Sort)</p>
 <p>Array의 Element들을 하나씩 대조하면서 정렬하는 알고리즘.</p>
 <p>Best: n, Average: n^2, Worst: n^2</p>
+</li>
+</ol>
 <pre><code class="language-go">func BubbleSort(list []int) {
     length := len(list)
     for i := 0; i &lt; length; i++ {
@@ -51,12 +53,14 @@
     }
 }
 </code></pre>
-</li>
+<ol start="2">
 <li>
 <p>선택 정력 (Selection Sort)</p>
 <p>Array중 값이 가장 작은 Element를 Array의 첫번째, 두번째, 세번째, ... 순으로 옮긴다.<br>
 <br>
 Best: n^2, Average: n^2, Worst: n^2</p>
+</li>
+</ol>
 <pre><code class="language-go">func SelectionSort(list []int) {
     length := len(list)
         for i := 0; i &lt; length-1; i++ {
@@ -75,12 +79,14 @@ Best: n^2, Average: n^2, Worst: n^2</p>
         }
 }
 </code></pre>
-</li>
+<ol start="3">
 <li>
 <p>삽입 정렬 (Insertion Sort)</p>
 <p>Array의 Element를 순서데로 (1번+2번, 2번+3번, 4번+5번...) 비교하고 작은걸 앞으로? 보낸다.<br>
 <br>
 Best: n, Average: n^2, Worst: n^2</p>
+</li>
+</ol>
 <pre><code class="language-go">func InsertionSort(list []int) {
     length := len(list)
 
@@ -94,12 +100,14 @@ Best: n, Average: n^2, Worst: n^2</p>
     }
 }
 </code></pre>
-</li>
+<ol start="4">
 <li>
 <p>합병 정렬 (Merge Sort)</p>
 <p>제귀함수로 Array를 계속 반으로 나누어 반으로 나눈것들을 따로 정렬하고, 합치면서 다시 정렬하는 정렬 방식.<br>
 <br>
 Best: n log n, Average: n log n, Worst: n log n</p>
+</li>
+</ol>
 <pre><code class="language-go">func MergeSort(list []int) []int {
     length := len(list)
     middle := length / 2
@@ -156,8 +164,6 @@ for j := 0; j &lt; len(right); j++ {
 return result
 }
 </code></pre>
-</li>
-</ol>
 </post-main>
 			<style>
 				img {
