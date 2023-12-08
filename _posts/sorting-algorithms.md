@@ -12,21 +12,21 @@ banner: 'helena-yankovska-unsplash.jpg'
 
     Best: n, Average: n^2, Worst: n^2
 
-    ```go
-    func BubbleSort(list []int) {
-        length := len(list)
-        for i := 0; i < length; i++ {
-            j := i
+```go
+func BubbleSort(list []int) {
+    length := len(list)
+    for i := 0; i < length; i++ {
+        j := i
 
-            for j > 0 {
-                if list[j-1] > list[j] {
-                    Swap(list, j-1, j)
-                }
-            j--
+        for j > 0 {
+            if list[j-1] > list[j] {
+                Swap(list, j-1, j)
             }
+        j--
         }
     }
-    ```
+}
+```
 
 2. 선택 정력 (Selection Sort)
 
@@ -34,25 +34,25 @@ banner: 'helena-yankovska-unsplash.jpg'
     \
     Best: n^2, Average: n^2, Worst: n^2
 
-    ```go
-    func SelectionSort(list []int) {
-        length := len(list)
-            for i := 0; i < length-1; i++ {
-                // Finding minimum element of list
-                indexMin := i
-                for j := i + 1; j < length; j++ {
-                    if list[j] < list[indexMin] {
-                        indexMin = j
-                    }
-                }
-
-                // Swaping minimum element of list with first element
-                if indexMin != i {
-                    Swap(list, i, indexMin)
+```go
+func SelectionSort(list []int) {
+    length := len(list)
+        for i := 0; i < length-1; i++ {
+            // Finding minimum element of list
+            indexMin := i
+            for j := i + 1; j < length; j++ {
+                if list[j] < list[indexMin] {
+                    indexMin = j
                 }
             }
-    }
-    ```
+
+            // Swaping minimum element of list with first element
+            if indexMin != i {
+                Swap(list, i, indexMin)
+            }
+        }
+}
+```
 
 3. 삽입 정렬 (Insertion Sort)
 
@@ -60,20 +60,20 @@ banner: 'helena-yankovska-unsplash.jpg'
     \
     Best: n, Average: n^2, Worst: n^2
 
-    ```go
-    func InsertionSort(list []int) {
-        length := len(list)
+```go
+func InsertionSort(list []int) {
+    length := len(list)
 
-        for i:= 0; i < length-1; i++ {
-            j := i
+    for i:= 0; i < length-1; i++ {
+        j := i
 
-            for j > 0 && list[j-1] > list[j] {
-                Swap(list, j-1, j)
-                j--
-            }
+        for j > 0 && list[j-1] > list[j] {
+            Swap(list, j-1, j)
+            j--
         }
     }
-    ```
+}
+```
 
 4. 합병 정렬 (Merge Sort)
 
@@ -81,60 +81,60 @@ banner: 'helena-yankovska-unsplash.jpg'
     \
     Best: n log n, Average: n log n, Worst: n log n
 
-    ```go
-    func MergeSort(list []int) []int {
-        length := len(list)
-        middle := length / 2
-        if length <= 1 {
-            return list
-        }
-
-        // Split list to left, right list
-        var (
-            left  = make([]int, middle)
-            right = make([]int, length-middle)
-        )
-
-        for i := 0; i < length; i++ {
-            if i < middle {
-                left[i] = list[i]
-            } else {
-                right[i-middle] = list[i]
-            }
-        }
-
-        left = MergeSort(left)
-        right = MergeSort(right)
-
-        return Merge(left, right)
+```go
+func MergeSort(list []int) []int {
+    length := len(list)
+    middle := length / 2
+    if length <= 1 {
+        return list
     }
 
-    // Merges list of int while sorting them
-    func Merge(left, right []int) (result []int) {
-    result = make([]int, len(left)+len(right))
+    // Split list to left, right list
+    var (
+        left  = make([]int, middle)
+        right = make([]int, length-middle)
+    )
 
-    i := 0
-    for len(left) > 0 && len(right) > 0 {
-        if left[0] <= right[0] {
-            result[i] = left[0]
-            left = left[1:]
+    for i := 0; i < length; i++ {
+        if i < middle {
+            left[i] = list[i]
         } else {
-            result[i] = right[0]
-            right = right[1:]
+            right[i-middle] = list[i]
         }
-        i++
     }
 
-    // If there is remaining
-    for j := 0; j < len(left); j++ {
-        result[i] = left[j]
-        i++
-    }
-    for j := 0; j < len(right); j++ {
-        result[i] = right[j]
-        i++
-    }
+    left = MergeSort(left)
+    right = MergeSort(right)
 
-    return result
+    return Merge(left, right)
+}
+
+// Merges list of int while sorting them
+func Merge(left, right []int) (result []int) {
+result = make([]int, len(left)+len(right))
+
+i := 0
+for len(left) > 0 && len(right) > 0 {
+    if left[0] <= right[0] {
+        result[i] = left[0]
+        left = left[1:]
+    } else {
+        result[i] = right[0]
+        right = right[1:]
     }
-    ```
+    i++
+}
+
+// If there is remaining
+for j := 0; j < len(left); j++ {
+    result[i] = left[j]
+    i++
+}
+for j := 0; j < len(right); j++ {
+    result[i] = right[j]
+    i++
+}
+
+return result
+}
+```

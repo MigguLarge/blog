@@ -1,9 +1,9 @@
 ---
-title: 'Hong Kong Mid-Levels Photos'
-author: 'Krishna'
-date: '2023-12-08T19:11:00'
-thumbnail: 'hong-kong-mid-levels-photos/wellington-st.jpg'
-banner: 'hong-kong-mid-levels-photos/banner.jpg'
+title: "Hong Kong Mid-Levels Photos"
+author: "Krishna"
+date: "2023-12-08T19:11:00"
+thumbnail: "hong-kong-mid-levels-photos/wellington-st.jpg"
+banner: "hong-kong-mid-levels-photos/banner.jpg"
 ---
 
 홍콩 미드레벨에서 찍은 몇몇 사진들 (물론 베스트 컷)

@@ -133,7 +133,7 @@ fs.writeFileSync(
                     padding: 0;
                     display: grid;
                     grid-template-columns: repeat(4, 1fr);
-                    gap: .5em;
+                    gap: 1em;
                 }
 
                 @media screen and (max-width: 864px) {
