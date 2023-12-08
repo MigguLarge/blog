@@ -24,7 +24,7 @@ class CustomHeader extends HTMLElement {
             <style>
                 .header {
                     width: 100$;
-                    border-bottom: 1px solid black;
+                    /* border-bottom: 1px solid black; */
                     margin: 0;
                     padding: 2em 0;
                     display: flex;
@@ -199,6 +199,7 @@ class PostMain extends HTMLElement {
             .post-main {
                 width: calc(100% - 20vw);
                 margin: 2em auto;
+				margin-top: 0;
             }
 
             .post-info {
@@ -206,7 +207,7 @@ class PostMain extends HTMLElement {
                 padding-top: 0;
                 display: flex;
                 align-items: center;
-                border-bottom: 1px solid var(--gray)
+                border-bottom: 1px solid var(--gray);
             }
 
             .post-title {
@@ -244,6 +245,10 @@ class PostMain extends HTMLElement {
 				text-align: center;
 			}
 
+			p > img {
+				width: 50%;
+			}
+
             @media screen and (max-width: 864px) {
                 .post-info {
                     flex-direction: column;
@@ -254,6 +259,10 @@ class PostMain extends HTMLElement {
                     margin: 0;
                     padding: 0;
                 }
+
+				p > img {
+					width: 80%;
+				}
             }
 
             @media screen and (min-width: 577px) and (max-width: 864px) {

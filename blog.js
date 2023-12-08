@@ -129,6 +129,7 @@ fs.writeFileSync(
                 }
 
                 .post-list {
+					margin: 0;
                     width: 100%;
                     padding: 0;
                     display: grid;
@@ -182,11 +183,6 @@ postList.map((post) =>
             }" post-date="${post.date}" post-banner="../img/${
                 post.banner
             }">${markdownToHtml(post.content)}</post-main>
-			<style>
-				img {
-					width: 50%;
-				}
-			</style>
             `,
             `../components.js`,
         ),
