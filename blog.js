@@ -182,6 +182,11 @@ postList.map((post) =>
             }" post-date="${post.date}" post-banner="../img/${
                 post.banner
             }">${markdownToHtml(post.content)}</post-main>
+			<style>
+				img {
+					width: 50%;
+				}
+			</style>
             `,
             `../components.js`,
         ),
