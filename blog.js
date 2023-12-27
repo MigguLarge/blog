@@ -162,7 +162,7 @@ fs.writeFileSync(
                     ${postList
                         .map(
                             (post) =>
-                                `<post-list-item post-href="./posts/${post.slug}.html" post-thumbnail="./img/${post.thumbnail}" post-title="${post.title}" post-date="${post.date}" post-author="${post.author}"></post-list-item>`,
+                                `<post-list-item post-href="./posts/${post.slug}" post-thumbnail="./img/${post.thumbnail}" post-title="${post.title}" post-date="${post.date}" post-author="${post.author}"></post-list-item>`,
                         )
                         .join('')}
                 </ul>
