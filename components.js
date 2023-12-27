@@ -124,6 +124,7 @@ class PostListItem extends HTMLElement {
         wrapper.appendChild(postThumbnail);
         wrapper.appendChild(postTitle);
         wrapper.appendChild(postInfo);
+        wrapper.a
         // wrapper.appendChild(postInfoWrapper);
     }
 }
@@ -232,6 +233,7 @@ class PostMain extends HTMLElement {
             .post-content {
 				padding: 1em;
                 background-color: var(--white);
+                word-break: keep-all;
             }
 
             .post-banner {
