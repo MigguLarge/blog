@@ -13,7 +13,10 @@ program.version('0.1.0');
 program.parse;
 
 const postsDirectory = path.join(process.cwd(), '_posts');
+
 const mathjaxSrc = '<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>'
+const highlightjsSrc = `<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>`
 
 function markdownToHtml(markdown) {
     return md.render(markdown);
@@ -63,8 +66,6 @@ function layout(title, inner, componentsRoute, extraScript) {
             <title>${title}</title>
             <script src="${componentsRoute}" defer></script>
 			${extraScript}
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
-            <script>hljs.highlightAll();</script>
             <style>
                 :root {
                     --black: #232323;
@@ -102,7 +103,8 @@ const postList = getAllPost([
     'thumbnail',
     'content',
     'banner',
-	'mathjax'
+	'mathjax',
+	'highlightjs'
 ]);
 
 fs.writeFileSync(
@@ -189,7 +191,8 @@ postList.map((post) =>
             }">${markdownToHtml(post.content)}</post-main>
             `,
             `../components.js`,
-			`${post.mathjax ? mathjaxSrc : ''}`
+			`${post.mathjax ? mathjaxSrc : ''}
+			${post.highlightjs ? highlightjsSrc : ''}`
         ),
         'utf8',
         'w+',
