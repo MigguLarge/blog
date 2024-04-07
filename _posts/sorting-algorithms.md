@@ -4,6 +4,7 @@ author: 'Krishna'
 date: '2021-12-02T03:13:27.552Z'
 thumbnail: 'helena-yankovska-unsplash.jpg'
 banner: 'helena-yankovska-unsplash.jpg'
+highlightjs: true
 ---
 
 1. 버블 정렬 (Bubble Sort)
