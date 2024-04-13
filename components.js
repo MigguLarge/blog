@@ -28,13 +28,20 @@ class CustomHeader extends HTMLElement {
                     margin: 0;
                     padding: 2em 0;
                     display: flex;
+                    flex-direction: column;
                     justify-content: center;
                     align-items: center;
                 }
+
+                .header p {
+                    margin: 0;
+                    margin-top: .5em;
+                }
             </style>
-            <div class="header">
+            <a href="/" class="header">
                 <svg viewBox="0 0 465.45 186.18" class="header__jun" fill="var(--black)" width="128px"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M465.45,69.82V186.18H418.9V69.82a23.27,23.27,0,0,0-46.53-.4V128c0,.25,0,.5,0,.75v57.44H325.81V185a58.56,58.56,0,0,1-11.62,1.16h0a58,58,0,0,1-38.63-14.68,69.81,69.81,0,0,1-112.64-55.14V46.54H139.64v69.82A69.82,69.82,0,0,1,0,116.36V93.09H46.55v23.27a23.27,23.27,0,0,0,46.54,0V46.54H46.55V0H209.46V116.36a23.27,23.27,0,0,0,46.54,0V0h46.55V128a11.64,11.64,0,0,0,11.63,11.64h0a11.63,11.63,0,0,0,11.62-11.34V0h46.56V4a69.84,69.84,0,0,1,93.08,65.84Z"/></g></g></svg>
-            </div>
+                <p>Junhyung Chang's Blog</p>
+            </a>
         `;
     }
 }
@@ -69,9 +76,8 @@ class PostListItem extends HTMLElement {
         const postInfo = document.createElement("span");
         postInfo.setAttribute("class", "post-info");
         const d = new Date(`${this.getAttribute("post-date")}`);
-        postInfo.textContent = `${d.getFullYear()}-${
-            d.getMonth() + 1
-        }-${d.getDate()} | ${this.getAttribute("post-author")}`;
+        postInfo.textContent = `${d.getFullYear()}-${d.getMonth() + 1
+            }-${d.getDate()} | ${this.getAttribute("post-author")}`;
 
         const style = document.createElement("style");
         style.textContent = `
@@ -186,9 +192,8 @@ class PostMain extends HTMLElement {
         const postDate = document.createElement("p");
         postDate.setAttribute("class", "post-date");
         const d = new Date(this.getAttribute("post-date"));
-        postDate.textContent = `${d.getFullYear()}-${
-            d.getMonth() + 1
-        }-${d.getDate()}`;
+        postDate.textContent = `${d.getFullYear()}-${d.getMonth() + 1
+            }-${d.getDate()}`;
 
         const postContent = document.createElement("div");
         postContent.setAttribute("class", "markdown-body post-content");
